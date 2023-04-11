@@ -9,6 +9,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## HW9
+### Group members: Kylie Knudten, Alison Wyatt
 ## Part 1: Data tidying
 
 ```{r}
@@ -46,4 +48,7 @@ av.neat %>% filter(time == 1, death == "YES") %>%
             missing = sum(return == ""))
 View(av.neat)
 ```
+
+## Part 2: Validation
+
 
