@@ -10,7 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## HW9
+
 ### Group members: Kylie Knudten, Alison Wyatt
+
 ## Part 1: Data tidying
 
 ```{r}
@@ -51,4 +53,10 @@ View(av.neat)
 
 ## Part 2: Validation
 
+### Kylie's statement: "There's a 2-in-3 chance that a member of the Avengers returned from their first stint in the afterlife"
 
+```{r}
+av.neat %>% filter(time==1, death=="YES") %>% summarise(total.num = n(), return1death = sum(return == "YES"), chance = return1death/total.num)
+```
+
+This statement is true, as the total percent of Avengers who returned after their first death is 0.698, which is just slightly higher than a 2-in-3 chance which is around 0.667.
