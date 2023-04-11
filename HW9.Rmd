@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Group members: Kylie Knudten, Alison Wyatt
 
+Github link: https://github.com/aawyatt/HW9
+
 ## Part 1: Data tidying
 
 ```{r}
@@ -60,3 +62,11 @@ av.neat %>% filter(time==1, death=="YES") %>% summarise(total.num = n(), return1
 ```
 
 This statement is true, as the total percent of Avengers who returned after their first death is 0.698, which is just slightly higher than a 2-in-3 chance which is around 0.667.
+
+
+### Alison's statement: "Of the nine Avengers we see on screen — Iron Man, Hulk, Captain America, Thor, Hawkeye, Black Widow, Scarlet Witch, Quicksilver and The Vision — every single one of them has died at least once in the course of their time Avenging in the comics...all those top-tier Avengers get better after their first death"
+
+```{r}
+av.neat %>% filter(Name.Alias %in% c("Anthony Edward \"Tony\" Stark", "Robert Bruce Banner", "Steven Rogers", "Thor Odinson", "Clinton Francis Barton", "Natalia Alianovna Romanova", "Wanda Maximoff", "Pietro Maximoff", "Victor Shade (alias)"), time == 1) %>% select(Name.Alias, time, death, return)
+```
+All of the on screen Avengers did in fact die once - and also returned after their first death.
